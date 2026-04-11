@@ -1,0 +1,26 @@
+---
+// src/layouts/MainLayout.astro
+import '../styles/global.css'
+const { title = 'FOURFO' } = Astro.props
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head><body class="flex min-h-screen flex-col bg-gray-900 font-sans text-gray-100 antialiased">
+    <nav class="sticky top-0 z-50 border-b border-gray-700 bg-gray-800 shadow-lg">
+      <slot name="navbar" />
+    </nav>
+
+    <main class="container mx-auto flex-grow px-4 py-8">
+      <slot />
+    </main>
+
+    <slot name="footer" />
+
+    <script is:inline src="/js/main.js"></script>
+  </body>
+</html>
