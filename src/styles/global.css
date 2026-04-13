@@ -6,7 +6,7 @@
   --color-neon-pink: #ff007f;
 
   /* fonts */
-  --font-sans: Inter;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
 }
 
 /* base style */
