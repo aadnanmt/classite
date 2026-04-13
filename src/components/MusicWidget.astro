@@ -1,42 +1,49 @@
 ---
+
 ---
-<div id="persistent-music" class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 z-50 w-[90%] md:w-64 bg-gray-800/90 backdrop-blur-sm p-3 rounded-lg shadow-xl border border-gray-600 flex items-center space-x-3 transition-all duration-500">
-  
+
+<div
+  id="persistent-music"
+  class="fixed bottom-4 left-1/2 z-50 flex w-[90%] -translate-x-1/2 items-center space-x-3 rounded-lg border border-gray-600 bg-gray-800/90 p-3 shadow-xl backdrop-blur-sm transition-all duration-500 md:right-4 md:left-auto md:w-64 md:translate-x-0"
+>
   <audio id="bgm-player" loop>
-      <source src="/audio/bgm-navjaxx-test.mp3" type="audio/mpeg">
+    <source src="/audio/bgm-navjaxx-test.mp3" type="audio/mpeg" />
   </audio>
 
   <div class="flex-shrink-0">
-      <button id="music-toggle-btn" class="bg-blue-600 hover:bg-blue-500 text-white rounded-full h-10 w-10 flex items-center justify-center focus:outline-none shadow-lg shadow-blue-500/50">
-          <span id="music-icon"><i class="fas fa-play"></i></span>
-      </button>
+    <button
+      id="music-toggle-btn"
+      class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg shadow-blue-500/50 hover:bg-blue-500 focus:outline-none"
+    >
+      <span id="music-icon"><i class="fas fa-play"></i></span>
+    </button>
   </div>
 
   <div class="flex-1 overflow-hidden">
-      <p class="text-[10px] text-gray-400 uppercase tracking-widest">Now Playing</p>
-      <div class="relative overflow-hidden h-5 w-full">
-          <p class="text-sm font-bold text-blue-300 whitespace-nowrap animate-marquee">
-              Classroom Vibes - FOURFO
-          </p>
-      </div>
+    <p class="text-[10px] tracking-widest text-gray-400 uppercase">Now Playing</p>
+    <div class="relative h-5 w-full overflow-hidden">
+      <p class="animate-marquee text-sm font-bold whitespace-nowrap text-blue-300">
+        Classroom Vibes - FOURFO
+      </p>
+    </div>
   </div>
 </div>
 
 <script>
   // Pindahin logic toggleMusic() lu ke sini biar di-bundle sama Vite
-  const btn = document.getElementById('music-toggle-btn');
-  const audio = document.getElementById('bgm-player') as HTMLAudioElement;
-  const icon = document.getElementById('music-icon');
+  const btn = document.getElementById('music-toggle-btn')
+  const audio = document.getElementById('bgm-player') as HTMLAudioElement
+  const icon = document.getElementById('music-icon')
 
   if (btn && audio && icon) {
     btn.addEventListener('click', () => {
       if (audio.paused) {
-        audio.play();
-        icon.innerHTML = '<i class="fas fa-pause"></i>';
+        audio.play()
+        icon.innerHTML = '<i class="fas fa-pause"></i>'
       } else {
-        audio.pause();
-        icon.innerHTML = '<i class="fas fa-play"></i>';
+        audio.pause()
+        icon.innerHTML = '<i class="fas fa-play"></i>'
       }
-    });
+    })
   }
 </script>
