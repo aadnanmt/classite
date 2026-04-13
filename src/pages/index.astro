@@ -2,9 +2,85 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Beranda | FOURFO">
-  <div class="flex flex-col items-center justify-center space-y-4 pt-10">
-    <h1 class="text-4xl font-bold text-neon-blue">Ready!</h1>
-    <p class="text-lg text-gray-300">Test Astro Import</p>
+<MainLayout title="Dashboard Kelas">
+  <div class="relative py-10 md:py-16">
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-blue-600/20 blur-[100px] rounded-full -z-10"></div>
+
+    <div class="text-center mb-16 space-y-4">
+        <div class="inline-flex items-center gap-3 px-4 py-1 rounded-lg bg-gray-800 border border-gray-700 text-xs font-mono text-green-400 mb-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-lg h-2 w-2 bg-green-500"></span>
+            </span>
+            SYSTEM CONNECT
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold text-white tracking-tight">
+            FOUR<span class="text-blue-500">FO</span>
+        </h1>
+        
+        <p class="text-lg text-gray-400 font-mono max-w-xl mx-auto border-x border-gray-700/50">
+            &lt;Ruang Kelas Teknik Komputer & Jaringan /&gt;
+        </p>
+
+        <div class="flex justify-center gap-4 mt-6">
+            <a href="#modules" class="px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition shadow-lg shadow-blue-500/25 flex items-center gap-2">
+                <i class="fas fa-terminal"></i> Akses Fitur
+            </a>
+            <a href="https://github.com/aadnanmt/classite" target="_blank" class="px-6 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg font-medium transition border border-gray-700 flex items-center gap-2">
+                <i class="fab fa-github"></i> Source Code
+            </a>
+        </div>
+    </div>
+
+    <div id="modules" class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4">
+        <div class="group relative bg-gray-900 border border-gray-800 hover:border-blue-500/50 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition">
+                <i class="far fa-calendar-alt text-8xl text-blue-500"></i>
+            </div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-blue-400 border border-gray-700 group-hover:bg-blue-900/20 group-hover:text-blue-300 transition">
+                    <i class="far fa-calendar-alt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 font-mono">Jadwal Pelajaran</h3>
+                <p class="text-sm text-gray-500 mb-4">Cek mata pelajaran yang aktif hari ini.</p>
+                <span class="text-xs text-gray-600 border border-gray-700 px-2 py-1 rounded">SEGERA ADA</span>
+            </div>
+        </div>
+
+        <a href="/" class="group relative bg-gray-900 border border-gray-800 hover:border-purple-500/50 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 overflow-hidden hover:shadow-lg hover:shadow-purple-900/20">
+            <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition">
+                <i class="fas fa-camera-retro text-8xl text-purple-500"></i>
+            </div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-purple-400 border border-gray-700 group-hover:bg-purple-900/20 group-hover:text-purple-300 transition">
+                    <i class="fas fa-camera-retro text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 font-mono">Galeri Kelas</h3>
+                <p class="text-sm text-gray-500 mb-4">Dokumentasi & memori kelas.</p>
+                <div class="flex items-center text-purple-400 text-sm font-semibold group-hover:translate-x-2 transition-transform">
+                    Buka Galeri <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="/" class="group relative bg-gray-900 border border-gray-800 hover:border-green-500/50 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 overflow-hidden hover:shadow-lg hover:shadow-green-900/20">
+            <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition">
+                <i class="fas fa-user-secret text-8xl text-green-500"></i>
+            </div>
+            <div class="relative z-10">
+                <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-4 text-green-400 border border-gray-700 group-hover:bg-green-900/20 group-hover:text-green-300 transition">
+                    <i class="fas fa-user-secret text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2 font-mono">Pesan Anonim</h3>
+                <p class="text-sm text-gray-500 mb-4">Kirim pesan rahasia.</p>
+                <div class="flex items-center text-green-400 text-sm font-semibold group-hover:translate-x-2 transition-transform">
+                    Kirim Pesan <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+            </div>
+        </a>
+
+    </div>
   </div>
 </MainLayout>
