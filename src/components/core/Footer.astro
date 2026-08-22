@@ -1,7 +1,11 @@
 ---
-
+import { SITE_NAME, REPO_URL } from '../../const'
 ---
 
 <footer class="mt-auto border-t-4 border-black bg-white py-4 text-center">
-  <p class="text-sm font-medium">&copy; 2026 FOURFO Project</p>
+  <p class="text-sm font-medium">
+    &copy; 2026 {SITE_NAME} /
+    <span class="font-mono text-xs text-gray-700">{__COMMIT__}</span>
+    / <a href={`${REPO_URL}/blob/main/LICENSE`} class="underline hover:no-underline">License</a>
+  </p>
 </footer>

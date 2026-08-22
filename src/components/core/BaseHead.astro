@@ -1,11 +1,8 @@
 ---
-interface Props {
-  title?: string
-  description?: string
-}
+import { SITE_NAME, SITE_DESCRIPTION } from '../../const'
+import type { PageProps } from '../../types'
 
-const { title = 'FOURFO', description = 'Ruang Kelas Teknik Komputer & Jaringan FOURFO' } =
-  Astro.props
+const { title = SITE_NAME, description = SITE_DESCRIPTION } = Astro.props as PageProps
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
 ---

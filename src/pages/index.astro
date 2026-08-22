@@ -2,6 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro'
 import BrutalBtn from '../components/ui/BrutalBtn.astro'
 import BrutalCard from '../components/ui/BrutalCard.astro'
+import { REPO_URL } from '../const'
 ---
 
 <MainLayout title="Dashboard Kelas">
@@ -18,10 +19,8 @@ import BrutalCard from '../components/ui/BrutalCard.astro'
     </p>
 
     <div class="mt-8 flex justify-center gap-4">
-      <BrutalBtn href="#modules" variant="primary">Akses Fitur</BrutalBtn>
-      <BrutalBtn href="https://github.com/aadnanmt/classite" variant="ghost" target="_blank">
-        Source Code
-      </BrutalBtn>
+      <BrutalBtn href="/about" variant="primary">Tentang</BrutalBtn>
+      <BrutalBtn href={REPO_URL} variant="ghost" target="_blank"> Source Code </BrutalBtn>
     </div>
   </section>
 
@@ -37,5 +36,5 @@ import BrutalCard from '../components/ui/BrutalCard.astro'
     <BrutalCard title="Pesan Anonim" description="Kirim pesan rahasia." href="/">
       <span class="underline-grow font-bold">Kirim Pesan</span>
     </BrutalCard>
-    </section>
+  </section>
 </MainLayout>
