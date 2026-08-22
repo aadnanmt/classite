@@ -4,12 +4,23 @@ interface Props {
   description?: string
 }
 
-const { title = 'FOURFO', description = 'Kelas Digital FOURFO' } = Astro.props
+const { title = 'FOURFO', description = 'Ruang Kelas Teknik Komputer & Jaringan FOURFO' } =
+  Astro.props
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
 <meta name="description" content={description} />
-<title>FOUR FO | {title}</title>
 
+<title>FOUR FO | {title}</title>
+<link rel="canonical" href={canonicalURL} />
+<link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
