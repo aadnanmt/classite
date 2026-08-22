@@ -1,18 +1,41 @@
 @import 'tailwindcss';
 
 @theme {
-  /* porting  neon from config old */
-  --color-neon-blue: #00f2ff;
-  --color-neon-pink: #ff007f;
+  /* reference by angie design tokens */
+  --color-cream: #fefff0;
+  --color-primary: #bae6ff;
+  --color-accent: #ffdc58;
 
-  /* fonts */
-  --font-sans: 'Inter Variable', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', monospace;
+  --font-sans: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-brutal-sm: 4px 4px 0 rgba(0, 0, 0, 0.3);
+  --shadow-brutal-md: 6px 6px 0 rgba(0, 0, 0, 0.3);
+  --shadow-brutal-lg: 8px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
-/* base style */
 @layer base {
   body {
-    @apply bg-gray-900 text-gray-100 antialiased;
+    @apply bg-cream text-black antialiased;
+  }
+}
+
+@utility underline-grow {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 6px;
+    width: 0;
+    background-color: var(--color-accent);
+    transition-property: width;
+    transition-duration: 300ms;
+  }
+
+  &:hover::before {
+    width: 100%;
   }
 }

@@ -1,28 +1,25 @@
 ---
-import '@fontsource-variable/inter'
-import '@fontsource-variable/jetbrains-mono'
+import '@fontsource-variable/space-grotesk'
 import '../styles/global.css'
-import Navbar from '../components/Navbar.astro'
-import Footer from '../components/Footer.astro'
+import BaseHead from '../components/core/BaseHead.astro'
+import Navbar from '../components/core/Navbar.astro'
+import Footer from '../components/core/Footer.astro'
 
-const { title = 'FOURFO' } = Astro.props
+interface Props {
+  title?: string
+  description?: string
+}
+
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOUR FO | {title}</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
+    <BaseHead title={title} description={description} />
   </head>
-  <body class="flex min-h-screen flex-col bg-gray-900 font-sans text-gray-100 antialiased">
-    <nav class="sticky top-0 z-50 border-b border-gray-700 bg-gray-800 shadow-lg">
-      <Navbar />
-    </nav>
+  <body class="bg-cream flex min-h-screen flex-col font-sans text-black antialiased">
+    <Navbar />
 
     <main class="container mx-auto flex-grow px-4 py-8">
       <slot />
