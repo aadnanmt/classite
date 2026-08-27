@@ -1,39 +1,38 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
+import PageHeader from '../components/core/PageHeader.astro'
 import BrutalBtn from '../components/ui/BrutalBtn.astro'
 import BrutalCard from '../components/ui/BrutalCard.astro'
 import { REPO_URL } from '../const'
 ---
 
 <MainLayout title="Dashboard Kelas">
-  <section class="py-16 text-center md:py-24">
-    <h1 class="text-5xl font-black tracking-tight md:text-7xl">
-      FOUR<span class="relative"
-        ><span class="bg-accent absolute inset-x-0 bottom-0 h-[50%]"></span><span class="relative"
-          >FO</span
-        ></span
-      >
-    </h1>
-    <p class="mx-auto mt-4 max-w-xl text-lg text-gray-700">
-      Ruang Kelas Teknik Komputer &amp; Jaringan
-    </p>
-
+  <PageHeader
+    title="FOUR"
+    highlight="FO"
+    size="hero"
+    description="Ruang Kelas Teknik Komputer & Jaringan"
+  >
     <div class="mt-8 flex justify-center gap-4">
       <BrutalBtn href="/about" variant="primary">Tentang</BrutalBtn>
       <BrutalBtn href={REPO_URL} variant="ghost" target="_blank"> Source Code </BrutalBtn>
     </div>
-  </section>
+  </PageHeader>
 
   <section id="modules" class="grid max-w-5xl grid-cols-1 gap-6 pb-16 md:grid-cols-3">
-    <BrutalCard title="Jadwal Pelajaran" description="Cek mata pelajaran yang aktif hari ini.">
-      <span class="inline-block border-2 border-black px-2 py-1 text-xs font-bold">SEGERA ADA</span>
+    <BrutalCard
+      title="Jadwal Pelajaran"
+      description="Cek mata pelajaran yang aktif hari ini."
+      href="/schedule"
+    >
+      <span class="underline-grow font-bold">Lihat Jadwal</span>
     </BrutalCard>
 
-    <BrutalCard title="Galeri Kelas" description="Dokumentasi & memori kelas." href="/">
+    <BrutalCard title="Galeri Kelas" description="Dokumentasi & memori kelas." href="/gallery">
       <span class="underline-grow font-bold">Buka Galeri</span>
     </BrutalCard>
 
-    <BrutalCard title="Pesan Anonim" description="Kirim pesan rahasia." href="/">
+    <BrutalCard title="Pesan Anonim" description="Kirim pesan rahasia." href="/messages">
       <span class="underline-grow font-bold">Kirim Pesan</span>
     </BrutalCard>
   </section>
