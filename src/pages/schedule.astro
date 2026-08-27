@@ -1,0 +1,19 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import PageHeader from '../components/core/PageHeader.astro'
+import BrutalCard from '../components/ui/BrutalCard.astro'
+---
+
+<MainLayout title="Jadwal Pelajaran" description="Jadwal mata pelajaran aktif hari ini">
+  <PageHeader
+    title="Jadwal"
+    highlight=" Pelajaran"
+    description="Jadwal pelajaran aktif hari ini."
+  />
+
+  <section id="jadwal" class="mx-auto grid max-w-5xl grid-cols-1 gap-6 pb-16 md:grid-cols-3">
+    <BrutalCard title="Belum tersedia" description="Belum ada jadwal. Santai dulu.">
+      <span class="inline-block border-2 border-black px-2 py-1 text-xs font-bold">SEGERA ADA</span>
+    </BrutalCard>
+  </section>
+</MainLayout>

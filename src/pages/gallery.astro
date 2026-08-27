@@ -1,0 +1,25 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import PageHeader from '../components/core/PageHeader.astro'
+---
+
+<MainLayout title="Galeri" description="Dokumentasi & memori kelas">
+  <PageHeader title="Galeri" highlight=" Kelas" description="Dokumentasi kelas." />
+
+  <section id="galeri" class="mx-auto max-w-5xl pb-16">
+    <div class="grid grid-cols-2 gap-6 md:grid-cols-3">
+      <div class="shadow-brutal-md border-4 border-black bg-white p-6">
+        <div class="aspect-square bg-gray-200"></div>
+        <p class="mt-3 text-sm font-medium">Belum ada foto. Santai dulu.</p>
+      </div>
+      <div class="shadow-brutal-md border-4 border-black bg-white p-6">
+        <div class="aspect-square bg-gray-200"></div>
+        <p class="mt-3 text-sm font-medium">Belum ada foto. Santai dulu.</p>
+      </div>
+      <div class="shadow-brutal-md border-4 border-black bg-white p-6">
+        <div class="aspect-square bg-gray-200"></div>
+        <p class="mt-3 text-sm font-medium">Belum ada foto. Santai dulu.</p>
+      </div>
+    </div>
+  </section>
+</MainLayout>

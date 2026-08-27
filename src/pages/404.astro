@@ -1,0 +1,13 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import PageHeader from '../components/core/PageHeader.astro'
+import BrutalBtn from '../components/ui/BrutalBtn.astro'
+---
+
+<MainLayout title="404">
+  <PageHeader title="4" highlight="0" after="4" size="display" description="Halaman gak ketemu.">
+    <div class="mt-8 flex justify-center">
+      <BrutalBtn href="/" variant="primary">Yuk Balik</BrutalBtn>
+    </div>
+  </PageHeader>
+</MainLayout>
