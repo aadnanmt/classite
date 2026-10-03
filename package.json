@@ -11,7 +11,12 @@
     "check": "astro check",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:changed": "git diff --name-only --diff-filter=d HEAD -z | xargs -0 -r prettier --write --ignore-unknown",
+    "lint:css": "stylelint \"src/**/*.css\"",
+    "lint:css:fix": "stylelint \"src/**/*.css\" --fix"
   },
   "dependencies": {
     "@fontsource-variable/space-grotesk": "^5.3.0",
@@ -22,9 +27,17 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/sitemap": "^3.7.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
     "prettier": "^3.8.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "stylelint": "^17.16.0",
+    "stylelint-config-standard": "^40.0.0",
     "typescript": "^5.9.3"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.css": "stylelint --fix"
   }
 }
