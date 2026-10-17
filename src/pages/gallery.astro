@@ -1,6 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 import PageHeader from '../components/core/PageHeader.astro'
+
+export const prerender = process.env.CF !== '1'
 ---
 
 <MainLayout title="Galeri" description="Dokumentasi & memori kelas">
