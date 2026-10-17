@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro'
 import PageHeader from '../components/core/PageHeader.astro'
 import BrutalBtn from '../components/ui/BrutalBtn.astro'
 import BrutalCard from '../components/ui/BrutalCard.astro'
-import { REPO_URL } from '../constants'
+import { IG_URL } from '../constants'
 ---
 
 <MainLayout title="Dashboard Kelas">
@@ -15,7 +15,7 @@ import { REPO_URL } from '../constants'
   >
     <div class="mt-8 flex justify-center gap-4">
       <BrutalBtn href="/about" variant="primary">Tentang</BrutalBtn>
-      <BrutalBtn href={REPO_URL} variant="ghost" target="_blank"> Source Code </BrutalBtn>
+      <BrutalBtn href={IG_URL} variant="ghost" target="_blank"> Instagram </BrutalBtn>
     </div>
   </PageHeader>
 
