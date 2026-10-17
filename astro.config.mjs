@@ -9,7 +9,7 @@ const commitHash = execSync('git rev-parse --short HEAD').toString().trim()
 // https://astro.build/config
 export default defineConfig({
   // static mode
-  site: 'https://example.dev',
+  site: 'https://fo.nanoolabs.dev',
   output: 'static',
   integrations: [sitemap()],
   image: {
