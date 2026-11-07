@@ -2,9 +2,10 @@
 import Container from '../ui/Container.astro'
 import { SITE_NAME } from '../../constants'
 import type { Link } from '../../types'
+import { getIcon } from '../../lib/icon'
 
 const links: Link[] = [
-  { label: 'Dashboard', href: '/' },
+  { label: 'Beranda', href: '/' },
   { label: 'Tentang', href: '/about' },
   { label: 'Jadwal', href: '/schedule' },
   { label: 'Galeri', href: '/gallery' },
@@ -38,27 +39,14 @@ const links: Link[] = [
         type="button"
       >
         <span class="sr-only">Open main menu</span>
-        <svg
-          aria-hidden="true"
+        <span
           class="absolute inset-s-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="M3.75 9h16.5m-16.5 6.75h16.5" stroke-linecap="round" stroke-linejoin="round"
-          ></path>
-        </svg>
-        <svg
-          aria-hidden="true"
+          set:html={getIcon('menu')}
+        />
+        <span
           class="absolute inset-s-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
-        </svg>
+          set:html={getIcon('close')}
+        />
       </button>
     </mobile-button>
   </Container>
