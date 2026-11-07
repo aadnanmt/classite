@@ -43,3 +43,62 @@
     width: 100%;
   }
 }
+
+@keyframes highlight-grow {
+  from {
+    width: 0;
+    left: 0;
+  }
+
+  to {
+    width: 108%;
+    left: 0;
+  }
+}
+
+@utility highlight-grow {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: -5%;
+    bottom: 0;
+    height: 15%;
+    background-color: var(--color-accent);
+    z-index: -1;
+    transform: rotate(-1deg) skewX(-2deg);
+    transform-origin: bottom left;
+    animation: highlight-grow 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+}
+
+@utility brutal-card {
+  @apply block border-4 border-black bg-white p-6 transition-all duration-200 hover:-translate-y-1;
+}
+
+@utility brutal-card-hover {
+  @apply brutal-card hover:shadow-brutal-sm;
+}
+
+@utility brutal-btn {
+  @apply inline-flex h-12 items-center rounded-full border-3 border-black px-6 text-base font-medium transition-all duration-200;
+}
+
+@utility brutal-btn-primary {
+  @apply brutal-btn bg-primary shadow-brutal-sm hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none;
+}
+
+@utility brutal-btn-ghost {
+  @apply brutal-btn shadow-brutal-sm bg-white hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none;
+}
+
+@utility hero-image {
+  @apply shadow-brutal-lg overflow-hidden border-4 border-black bg-white;
+}
+
+@utility hero-placeholder {
+  @apply bg-cream flex items-center justify-center border-4 border-black;
+}

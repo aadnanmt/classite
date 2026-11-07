@@ -1,23 +1,28 @@
 ---
+import Link from './Link.astro'
+
 interface Props {
   title: string
   description?: string
   href?: string
+  target?: string
 }
 
-const { title, description, href } = Astro.props
-
-const Tag = href ? 'a' : 'div'
+const { title, description, href, target } = Astro.props
 ---
 
-<Tag
-  href={href}
-  class:list={[
-    'hover:shadow-brutal-sm block border-2 border-black bg-white p-6 transition-all duration-200 hover:-translate-y-1',
-    !href && 'cursor-default',
-  ]}
->
-  <h3 class="mb-2 text-xl font-bold">{title}</h3>
-  {description && <p class="mb-4 text-sm text-gray-700">{description}</p>}
-  <slot />
-</Tag>
+{
+  href ? (
+    <Link href={href} target={target} class="brutal-card-hover">
+      <h3 class="mb-2 text-xl font-bold">{title}</h3>
+      {description && <p class="mb-4 text-sm text-gray-700">{description}</p>}
+      <slot />
+    </Link>
+  ) : (
+    <div class="brutal-card cursor-default">
+      <h3 class="mb-2 text-xl font-bold">{title}</h3>
+      {description && <p class="mb-4 text-sm text-gray-700">{description}</p>}
+      <slot />
+    </div>
+  )
+}

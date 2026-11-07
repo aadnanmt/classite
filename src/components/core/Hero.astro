@@ -1,0 +1,71 @@
+---
+import BrutalBtn from '../ui/BrutalBtn.astro'
+import type { Link } from '../../types'
+
+interface Props {
+  title: string
+  highlight?: string
+  description?: string
+  primaryCta?: Link
+  secondaryCta?: Link
+  image?: string
+  imageAlt?: string
+  class?: string
+}
+
+const {
+  title,
+  highlight,
+  description,
+  primaryCta,
+  secondaryCta,
+  image,
+  imageAlt,
+  class: className,
+} = Astro.props
+---
+
+<section class={`pb-20 relative ${className || ''}`}>
+  <div class="container mx-auto max-w-5xl px-4 pt-16 md:pt-24">
+    <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-[64%_36%] md:gap-1">
+      <div class="text-left md:pr-10">
+        <h1 class="text-6xl leading-none font-black tracking-tight md:text-8xl">
+          <span>{title}</span>
+          {highlight && <span class="highlight-grow">{highlight}</span>}
+        </h1>
+        {description && <p class="mt-4 max-w-xl text-lg text-gray-700">{description}</p>}
+        {
+          (primaryCta || secondaryCta) && (
+            <div class="mt-8 flex flex-row items-start justify-start gap-4">
+              {primaryCta && (
+                <BrutalBtn href={primaryCta.href} variant="primary" target={primaryCta.target}>
+                  {primaryCta.label}
+                </BrutalBtn>
+              )}
+              {secondaryCta && (
+                <BrutalBtn href={secondaryCta.href} variant="ghost" target={secondaryCta.target}>
+                  {secondaryCta.label}
+                </BrutalBtn>
+              )}
+            </div>
+          )
+        }
+      </div>
+      {
+        image ? (
+          <div class="relative h-77.5 w-6 md:h-77.5">
+            <div
+              class="hero-image"
+              style={`background-image: url('${image}'); background-size: cover; background-position: center;`}
+              aria-label={imageAlt || title}
+            />
+          </div>
+        ) : (
+          <div class="hero-placeholder relative flex h-77.5 w-full items-center justify-center border-4 border-black md:h-77.5">
+            <span class="font-medium text-gray-500">{imageAlt || 'Gambar belum tersedia'}</span>
+          </div>
+        )
+      }
+    </div>
+  </div>
+</section>
