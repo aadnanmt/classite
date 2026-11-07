@@ -5,6 +5,7 @@ import type { Link } from '../../types'
 
 const links: Link[] = [
   { label: 'Dashboard', href: '/' },
+  { label: 'Tentang', href: '/about' },
   { label: 'Jadwal', href: '/schedule' },
   { label: 'Galeri', href: '/gallery' },
   { label: 'Pesan', href: '/messages' },
@@ -16,12 +17,12 @@ const links: Link[] = [
     <a href="/" class="text-xl font-black tracking-tight">{SITE_NAME}</a>
 
     <nav
-      class="bg-cream absolute inset-x-0 top-16 hidden flex-col border-b-3 border-black px-4 py-4 group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex sm:flex-row sm:border-0 sm:bg-transparent sm:py-0"
+      class="bg-cream absolute inset-x-0 top-16 hidden flex-col items-center justify-center border-b-3 border-black px-4 py-4 group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex sm:flex-1 sm:flex-row sm:justify-center sm:border-0 sm:bg-transparent sm:py-0"
       id="nav-links"
     >
       {
         links.map((link) => (
-          <a href={link.href} class="px-4 py-3 text-sm font-medium sm:py-0">
+          <a href={link.href} class="text-md px-4 py-3 font-medium sm:py-0">
             <span class="underline-grow">{link.label}</span>
           </a>
         ))
@@ -39,7 +40,7 @@ const links: Link[] = [
         <span class="sr-only">Open main menu</span>
         <svg
           aria-hidden="true"
-          class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
+          class="absolute inset-s-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 transition-all group-aria-expanded:scale-0 group-aria-expanded:opacity-0"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
@@ -50,7 +51,7 @@ const links: Link[] = [
         </svg>
         <svg
           aria-hidden="true"
-          class="absolute start-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
+          class="absolute inset-s-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-expanded:scale-100 group-aria-expanded:opacity-100"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
