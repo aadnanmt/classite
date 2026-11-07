@@ -1,11 +1,12 @@
 @import 'tailwindcss';
 
+@plugin '@tailwindcss/typography';
+
 @theme {
   /* reference by angie design tokens */
   --color-cream: #fefff0;
   --color-primary: #bae6ff;
   --color-accent: #ffdc58;
-  --font-sans: 'Space Grotesk Variable', ui-sans-serif, system-ui, sans-serif;
 
   /* fluid display type */
   --text-hero: clamp(3rem, 8vw, 7rem);

@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
 import { execSync } from 'node:child_process'
@@ -34,6 +34,22 @@ export default defineConfig({
       entrypoint: 'astro/assets/services/sharp',
     },
   },
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Space Grotesk',
+      cssVariable: '--font-sans',
+      weights: ['300 700'],
+      fallbacks: ['ui-sans-serif', 'system-ui', 'sans-serif'],
+    },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'JetBrains Mono',
+      cssVariable: '--font-mono',
+      weights: ['400 700'],
+      fallbacks: ['ui-monospace', 'SF Mono', 'monospace'],
+    },
+  ],
   // https://vite.dev/config/shared-options#define
   vite: {
     define: {

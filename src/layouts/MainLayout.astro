@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/space-grotesk'
+import { Font } from 'astro:assets'
 import '../styles/global.css'
 import BaseHead from '../components/core/BaseHead.astro'
 import Navbar from '../components/core/Navbar.astro'
@@ -14,6 +14,8 @@ const { title, description } = Astro.props as PageProps
 <html lang="id">
   <head>
     <BaseHead title={title} description={description} />
+    <Font cssVariable="--font-sans" preload />
+    <Font cssVariable="--font-mono" />
     <!-- htmx 2.0.10 -->
     <script is:inline src="/htmx.min.js"></script>
   </head>
