@@ -15,9 +15,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky",
-    "format": "prettier --write .",
+    "format": "prettier --cache --write .",
     "format:check": "prettier --check .",
-    "format:changed": "git diff --name-only --diff-filter=d HEAD -z | xargs -0 -r prettier --write --ignore-unknown",
+    "format:changed": "git diff --name-only --diff-filter=d HEAD -z | xargs -0 -r prettier --cache --write --ignore-unknown",
     "lint:css": "stylelint \"src/**/*.css\"",
     "lint:css:fix": "stylelint \"src/**/*.css\" --fix"
   },
@@ -41,7 +41,7 @@
     "typescript": "^5.9.3"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
+    "*": "prettier --cache --ignore-unknown --write",
     "*.css": "stylelint --fix"
   }
 }
