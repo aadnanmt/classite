@@ -1,11 +1,34 @@
 ---
-import { SITE_NAME, REPO_URL } from '../../constants'
+import { SITE_NAME, REPO_URL, IG_URL } from '../../constants'
+import { getIcon } from '../../lib/icon'
 ---
 
-<footer class="mt-auto border-t-4 border-black bg-white py-4 text-center">
-  <p class="text-sm font-medium">
-    &copy; 2026 {SITE_NAME} /
-    <span class="font-mono text-xs text-gray-700">{__COMMIT__}</span>
-    / <a href={`${REPO_URL}/blob/main/LICENSE`} class="underline hover:no-underline">License</a>
-  </p>
+<footer class="mt-auto border-t-4 border-black bg-white py-10">
+  <div class="container mx-auto grid max-w-5xl grid-cols-1 items-center gap-6 px-4 md:grid-cols-3">
+    <div class="text-center font-bold md:text-left">
+      <a href="/" class="flex items-center justify-center gap-2 md:justify-start">
+        <span class="text-xl">{SITE_NAME}</span>
+      </a>
+    </div>
+    <div class="text-center">
+      <p class="text-sm font-medium">&copy; 2026 {SITE_NAME}. All rights reserved.</p>
+      <p class="mt-1 font-mono text-xs text-gray-700">{__COMMIT__}</p>
+    </div>
+    <div class="flex justify-center gap-5 md:justify-end">
+      <a
+        href={`${REPO_URL}`}
+        target="_blank"
+        class="transition-all duration-200 hover:translate-y-0.5"
+        aria-label="GitHub"
+        set:html={getIcon('github')}
+      />
+      <a
+        href={`${IG_URL}`}
+        target="_blank"
+        class="transition-all duration-200 hover:translate-y-0.5"
+        aria-label="Instagram"
+        set:html={getIcon('instagram')}
+      />
+    </div>
+  </div>
 </footer>
